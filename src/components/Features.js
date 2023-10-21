@@ -15,7 +15,7 @@ const Features = () => {
                 </p>
             </div>
             <div className='flex flex-col space-y-8 md:w-1/2'>
-                <div className='flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row'>
+                <div cl assName='flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row'>
                     <div className='rounded-l-full bg-brightRedSupLight md:bg-transparent'>
                         <div className='flex items-center space-x-2'>
                             <div className='px-4 py-2 text-white rounded-full md:py-1 bg-brightRed'>01</div>
