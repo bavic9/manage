@@ -1,10 +1,22 @@
 import React from 'react'
+import { useRef } from 'react'
 import logo from '../img/logo.svg'
+import { NavLink } from 'react-bootstrap';
 
 const Navbar = () => {
+
+    const navRef = useRef();
+
+    const showNav = () => {
+        navRef.current.classList.toggle('open')
+    }
+
+
+
+
   return (
     <nav className='relative container mx-auto p-6'>
-        <div className='flex item-center justify-between'>
+        <div ref={navRef} className='flex item-center justify-between'>
             <div className='pt-2'>
                 <img src={logo} alt={logo}/>
             </div>
@@ -18,9 +30,24 @@ const Navbar = () => {
             <button>
                 <a href='#' className='hidden md:block p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight'>Get Started</a>
             </button>
+
+            <button id='menu-btn' onClick={showNav}  className=' block hamburger md:hidden focus:outline-none'>
+                <span className='hamburger-top'></span>
+                <span className='hamburger-middle'></span>
+                <span className='hamburger-bottom'></span>
+            </button>
+
+            <div id='menu' onClick={showNav} className='hidden menuLink absolute flex flex-col items-center self-end  py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 top-20 right-6 drop-shadow-md'>
+                <a className='link' href="#">Pricing</a>
+                <a className='link' href="#">Product</a>
+                <a className='link' href="#">About Us</a>
+                <a className='link' href="#">Careers</a>
+                <a className='link' href="#">Community</a>
+            </div>
         </div> 
+        
     </nav>
   )
-}
+} 
 
 export default Navbar
